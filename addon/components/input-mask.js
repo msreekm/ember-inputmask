@@ -133,6 +133,10 @@ export default Ember.TextField.extend({
     this.set('unmaskedValue', this.$().inputmask('unmaskedvalue'));
   }),
 
+  keyUp() {
+    this.set('unmaskedValue', this.$().inputmask('unmaskedvalue'));
+  },
+
   // When the unmaskedValue changes, set the value.
   setValue: Ember.observer('unmaskedValue', function() {
     var debounce = this.get('debounce');
