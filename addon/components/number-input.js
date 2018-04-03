@@ -48,6 +48,9 @@ export default InputMaskComponent.extend({
 
     this._super();
   },
+  keyUp() {
+    this.set('unmaskedValue', this.$().inputmask('unmaskedvalue'));
+  },
 
   _maskShouldChange: Ember.observer(
     'mask',
